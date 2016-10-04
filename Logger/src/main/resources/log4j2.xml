@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Properties>
+		<Property name="log-path">../logs</Property>
+	</Properties>
+
+	<Appenders>
+		<!-- the standard-console-appender -->
+		<Console name="appender-Console-all" target="SYSTEM_OUT">
+			<!--OLD LAYOUT <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level 
+				- %msg%n" /> -->
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} %-5level [%C{1}.%M:%L] - %msg%n%throwable" />
+		</Console>
+		
+
+		<RollingFile name="RollingFile" fileName="logs/logging.log"
+			filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+			<PatternLayout>
+				<Pattern>%d{HH:mm:ss.SSS} %-5level [%C{1}.%M:%L] - %msg%n%throwable</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<logger name="org.hibernate" level="OFF" />
+		<Root level="error">
+			<AppenderRef ref="RollingFile" />
+			<AppenderRef ref="appender-Console-all" />
+		</Root>
+	</Loggers>
+
+</Configuration>
