@@ -13,12 +13,14 @@ public enum LOGSTATE {
 	STOPPED,
 
 	EMERGENCY,
-	
+
 	QUEUED,
-	
+
 	WATCHDOG,
-	
-	IGNORE;
+
+	IGNORE,
+
+	NOT_IMPLEMENTED;
 
 	@Override
 	public String toString() {
