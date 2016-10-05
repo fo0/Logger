@@ -19,6 +19,7 @@ public class ConfigureLogger {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		Configuration config = ctx.getConfiguration();
 		LoggerConfig loggerConfig = config.getLoggerConfig(LogManager.ROOT_LOGGER_NAME);
 		switch (CONSTANTS.LOGGER_LEVEL) {

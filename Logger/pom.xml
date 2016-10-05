@@ -1,26 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.fo0.ss.logger</groupId>
+	<groupId>com.fo0</groupId>
 	<artifactId>Logger</artifactId>
-
-	<parent>
-		<groupId>com.fo0.ss</groupId>
-		<artifactId>ScreenShare_Platform</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
-
-
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.testSource>1.8</maven.compiler.testSource>
-		<maven.compiler.testTarget>1.8</maven.compiler.testTarget>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.jdk>1.8</version.jdk>
-		<version.jersey>2.15</version.jersey>
 		<version.mvn.compiler>3.5.1</version.mvn.compiler>
 		<version.mvn.war.plugin>2.6</version.mvn.war.plugin>
 	</properties>
@@ -30,12 +19,13 @@
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.6.1</version>
+			<version>2.6.2</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.6.1</version>
+			<version>2.6.2</version>
 		</dependency>
 
 	</dependencies>
