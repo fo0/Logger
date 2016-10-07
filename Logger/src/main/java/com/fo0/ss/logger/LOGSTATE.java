@@ -7,6 +7,8 @@ public enum LOGSTATE {
 	PROCESSING,
 
 	FINISHED,
+	
+	REGISTER,
 
 	STARTING,
 
