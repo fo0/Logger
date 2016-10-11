@@ -21,6 +21,8 @@ public enum LOGSTATE {
 	WATCHDOG,
 
 	IGNORE,
+	
+	FAILED,
 
 	NOT_IMPLEMENTED;
 
