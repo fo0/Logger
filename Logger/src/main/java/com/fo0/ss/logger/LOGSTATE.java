@@ -7,7 +7,7 @@ public enum LOGSTATE {
 	PROCESSING,
 
 	FINISHED,
-	
+
 	REGISTER,
 
 	STARTING,
@@ -21,8 +21,10 @@ public enum LOGSTATE {
 	WATCHDOG,
 
 	IGNORE,
-	
+
 	FAILED,
+
+	API,
 
 	NOT_IMPLEMENTED;
 
