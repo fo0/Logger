@@ -25,6 +25,8 @@ public enum LOGSTATE {
 	FAILED,
 
 	API,
+	
+	ADD,
 
 	NOT_IMPLEMENTED;
 
