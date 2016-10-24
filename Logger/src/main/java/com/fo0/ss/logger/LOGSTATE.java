@@ -27,6 +27,8 @@ public enum LOGSTATE {
 	API,
 	
 	ADD,
+	
+	UPDATE,
 
 	NOT_IMPLEMENTED;
 
