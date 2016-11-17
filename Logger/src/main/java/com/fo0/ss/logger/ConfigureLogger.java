@@ -14,15 +14,28 @@ public class ConfigureLogger {
 	public static void initialize() {
 		LoggerContext ctx = (LoggerContext) LogManager.getContext(false);
 		try {
-			ctx.setConfigLocation(new URI("log4j2.xml"));
+			switch (OSCheck.getOperatingSystemType()) {
+			case Windows:
+				ctx.setConfigLocation(new URI("log4j2_lx.xml"));
+				break;
+
+			case Linux:
+				ctx.setConfigLocation(new URI("log4j2_win.xml"));
+				break;
+
+			default:
+				ctx.setConfigLocation(new URI("log4j2_win.xml"));
+				break;
+			}
+
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		Configuration config = ctx.getConfiguration();
 		LoggerConfig loggerConfig = config.getLoggerConfig(LogManager.ROOT_LOGGER_NAME);
-		switch (CONSTANTS.LOGGER_LEVEL) {
+		switch (CONSTANTS.LOGGER_LEVEL.toUpperCase()) {
 		case "INFO":
 			loggerConfig.setLevel(Level.INFO);
 			break;
