@@ -18,6 +18,7 @@ public class Logger extends LogManager {
 		log.info("\t Detected OS: " + os);
 		log.info("Logger has been successful initialized");
 		log.info("#########################################");
+		System.out.println();
 	}
 
 }
