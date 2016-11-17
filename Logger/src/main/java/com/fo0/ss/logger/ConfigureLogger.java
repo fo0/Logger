@@ -9,12 +9,14 @@ import org.apache.logging.log4j.core.LoggerContext;
 import org.apache.logging.log4j.core.config.Configuration;
 import org.apache.logging.log4j.core.config.LoggerConfig;
 
+import com.fo0.ss.logger.OSCheck.OSType;
+
 public class ConfigureLogger {
 
-	public static void initialize() {
+	public static void initialize(OSType os) {
 		LoggerContext ctx = (LoggerContext) LogManager.getContext(false);
 		try {
-			switch (OSCheck.getOperatingSystemType()) {
+			switch (os) {
 			case Windows:
 				ctx.setConfigLocation(new URI("log4j2_win.xml"));
 				break;
