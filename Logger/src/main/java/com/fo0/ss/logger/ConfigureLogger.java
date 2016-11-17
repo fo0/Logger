@@ -16,15 +16,15 @@ public class ConfigureLogger {
 		try {
 			switch (OSCheck.getOperatingSystemType()) {
 			case Windows:
-				ctx.setConfigLocation(new URI("log4j2_lx.xml"));
+				ctx.setConfigLocation(new URI("log4j2_win.xml"));
 				break;
 
 			case Linux:
-				ctx.setConfigLocation(new URI("log4j2_win.xml"));
+				ctx.setConfigLocation(new URI("log4j2_lx.xml"));
 				break;
 
 			default:
-				ctx.setConfigLocation(new URI("log4j2_win.xml"));
+				ctx.setConfigLocation(new URI("log4j2.xml"));
 				break;
 			}
 
