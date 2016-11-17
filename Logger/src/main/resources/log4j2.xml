@@ -7,17 +7,15 @@
 	<Appenders>
 		<!-- the standard-console-appender -->
 		<Console name="appender-Console-all" target="SYSTEM_OUT">
-			<!--OLD LAYOUT <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level 
-				- %msg%n" /> -->
 			<PatternLayout
-				pattern="%d{HH:mm:ss.SSS} %-5level [%C{1}.%M:%L] - %msg%n%throwable" />
+				pattern="%highlight{%d{HH:mm:ss.SSS} %-5level [%C{1}.%M:%L] - %msg%n%throwable}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}" />
 		</Console>
 		
 
 		<RollingFile name="RollingFile" fileName="logs/logging.log"
 			filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
 			<PatternLayout>
-				<Pattern>%d{HH:mm:ss.SSS} %-5level [%C{1}.%M:%L] - %msg%n%throwable</Pattern>
+				<Pattern>%highlight{%d{HH:mm:ss.SSS} %-5level [%C{1}.%M:%L] - %msg%n%throwable}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}</Pattern>
 			</PatternLayout>
 			<Policies>
 				<TimeBasedTriggeringPolicy />
