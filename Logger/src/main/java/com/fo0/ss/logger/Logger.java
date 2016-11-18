@@ -11,11 +11,33 @@ public class Logger extends LogManager {
 	static {
 		OSType os = OSCheck.getOperatingSystemType();
 		ConfigureLogger.initialize(os);
+
+		String colorized = "false";
+		if (CONSTANTS.LOGGER_ENABLE_COLOR.equals("default")) {
+			switch (OSCheck.getOperatingSystemType()) {
+			case Windows:
+				colorized = "false";
+				break;
+
+			case Linux:
+				colorized = "true";
+				break;
+
+			default:
+				colorized = "false";
+				break;
+			}
+
+		} else {
+			colorized = CONSTANTS.LOGGER_ENABLE_COLOR;
+		}
+
 		log.info("#########################################");
 		log.info("Logger-Configure Options:");
 		log.info(" Logger-Path: " + CONSTANTS.path);
 		log.info(" Logger-Level: " + CONSTANTS.LOGGER_LEVEL);
 		log.info(" Detected OS: " + os);
+		log.info(" Colorized: " + colorized);
 		log.info("Logger has been successful initialized");
 		log.info("#########################################");
 		System.out.println();

@@ -12,6 +12,7 @@ public class CONSTANTS {
 
 	// INFO | WARN
 	public static String LOGGER_LEVEL = "";
+	public static String LOGGER_ENABLE_COLOR = "";
 	public static String path;
 
 	static {
@@ -28,6 +29,7 @@ public class CONSTANTS {
 			try (OutputStream out = new FileOutputStream(path)) {
 				Properties properties = new Properties();
 				properties.setProperty("LOGGER.LEVEL", "INFO");
+				properties.setProperty("LOGGER_ENABLE_COLOR", "default");
 				properties.store(out, "This is a sample for java properties");
 
 				LOGGER_LEVEL = properties.getProperty("LOGGER.LEVEL");
@@ -43,6 +45,7 @@ public class CONSTANTS {
 				prop.load(in);
 
 				LOGGER_LEVEL = prop.getProperty("LOGGER.LEVEL");
+				LOGGER_ENABLE_COLOR = prop.getProperty("LOGGER_ENABLE_COLOR");
 
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

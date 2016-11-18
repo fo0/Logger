@@ -15,24 +15,46 @@ public class ConfigureLogger {
 
 	public static void initialize(OSType os) {
 		LoggerContext ctx = (LoggerContext) LogManager.getContext(false);
-		try {
-			switch (os) {
-			case Windows:
-				ctx.setConfigLocation(new URI("log4j2_win.xml"));
-				break;
 
-			case Linux:
-				ctx.setConfigLocation(new URI("log4j2_lx.xml"));
-				break;
+		if (CONSTANTS.LOGGER_ENABLE_COLOR == null)
+			CONSTANTS.LOGGER_ENABLE_COLOR = "default";
 
-			default:
-				ctx.setConfigLocation(new URI("log4j2.xml"));
-				break;
+		if (CONSTANTS.LOGGER_ENABLE_COLOR.equals("default") || CONSTANTS.LOGGER_ENABLE_COLOR.isEmpty()) {
+
+			try {
+				switch (os) {
+				case Windows:
+					ctx.setConfigLocation(new URI("log4j2_win.xml"));
+					break;
+
+				case Linux:
+					ctx.setConfigLocation(new URI("log4j2_lx.xml"));
+					break;
+
+				default:
+					ctx.setConfigLocation(new URI("log4j2.xml"));
+					break;
+				}
+
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} else if (CONSTANTS.LOGGER_ENABLE_COLOR.equalsIgnoreCase("true")) {
+			try {
+				ctx.setConfigLocation(new URI("log4j2_lx.xml"));
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else if (CONSTANTS.LOGGER_ENABLE_COLOR.equalsIgnoreCase("false")) {
+			try {
+				ctx.setConfigLocation(new URI("log4j2_win.xml"));
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		Configuration config = ctx.getConfiguration();
