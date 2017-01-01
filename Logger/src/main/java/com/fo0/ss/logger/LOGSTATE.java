@@ -25,12 +25,14 @@ public enum LOGSTATE {
 	FAILED,
 
 	API,
-	
+
 	ADD,
-	
+
 	UPDATE,
 
-	NOT_IMPLEMENTED;
+	NOT_IMPLEMENTED,
+
+	SKIPPING;
 
 	@Override
 	public String toString() {
