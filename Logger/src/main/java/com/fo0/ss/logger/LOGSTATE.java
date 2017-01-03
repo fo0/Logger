@@ -28,6 +28,8 @@ public enum LOGSTATE {
 
 	ADD,
 
+	UNSTABLE,
+
 	UPDATE,
 
 	NOT_IMPLEMENTED,
