@@ -3,6 +3,8 @@ package com.fo0.ss.logger;
 public enum LOGSTATE {
 
 	GENERAL,
+	
+	INITIALIZING,
 
 	PROCESSING,
 
