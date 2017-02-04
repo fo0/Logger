@@ -4,7 +4,7 @@ public enum LOGSTATE {
 
 	GENERAL,
 
-	INITIALIZING,
+	INITIALIZE,
 
 	PROCESSING,
 
