@@ -1,5 +1,6 @@
 package com.fo0.ss.logger;
 
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 
 import com.fo0.ss.logger.OSCheck.OSType;
@@ -41,6 +42,10 @@ public class Logger extends LogManager {
 		log.info("Logger has been successful initialized");
 		log.info("#########################################");
 		System.out.println();
+	}
+	
+	public static void setLoggerLevel(String level){
+		ConfigureLogger.setLoggerLevel(Level.valueOf(level.toUpperCase()));
 	}
 
 }

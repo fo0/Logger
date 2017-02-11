@@ -12,9 +12,11 @@ import org.apache.logging.log4j.core.config.LoggerConfig;
 import com.fo0.ss.logger.OSCheck.OSType;
 
 public class ConfigureLogger {
+	
+	private static LoggerContext ctx = null;
 
 	public static void initialize(OSType os) {
-		LoggerContext ctx = (LoggerContext) LogManager.getContext(false);
+		ctx = (LoggerContext) LogManager.getContext(false);
 
 		if (CONSTANTS.LOGGER_ENABLE_COLOR == null)
 			CONSTANTS.LOGGER_ENABLE_COLOR = "default";
@@ -79,6 +81,13 @@ public class ConfigureLogger {
 		default:
 			break;
 		}
+		ctx.updateLoggers();
+	}
+	
+	protected static void setLoggerLevel(Level level){
+		Configuration config = ctx.getConfiguration();
+		LoggerConfig loggerConfig = config.getLoggerConfig(LogManager.ROOT_LOGGER_NAME);
+		loggerConfig.setLevel(level);
 		ctx.updateLoggers();
 	}
 
