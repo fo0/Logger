@@ -40,7 +40,11 @@ public enum LOGSTATE {
 
 	INSTALLED,
 
-	DEINSTALL;
+	DEINSTALL,
+	
+	DATABASE,
+	
+	LICENSE;
 
 	@Override
 	public String toString() {
