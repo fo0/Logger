@@ -16,7 +16,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<version.jdk>1.8</version.jdk>
 		<version.mvn.compiler>3.6.0</version.mvn.compiler>
-		<version.mvn.war.plugin>2.6</version.mvn.war.plugin>
+		<version.mvn.war.plugin>3.0.0</version.mvn.war.plugin>
 	</properties>
 
 	<dependencies>
@@ -52,13 +52,11 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>${version.mvn.war.plugin}</version>
 				<configuration>
-					<failOnMissingWebXml>true</failOnMissingWebXml>
 					<archive>
 						<addMavenDescriptor>false</addMavenDescriptor>
 					</archive>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
 
