@@ -1,5 +1,6 @@
 # Logger
 
+Simple and ready-to-use Logger for Java-SE Projects
 
 # Using  ...
 
