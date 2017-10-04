@@ -1,6 +1,6 @@
 # Logger
 
-Simple and ready-to-use Logger for Java-SE Projects
+Simple and ready-to-use Logger for Java-SE Projects based on log4j2
 
 # Using  ...
 
