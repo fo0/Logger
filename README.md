@@ -8,6 +8,7 @@ Simple and ready-to-use Logger for Java-SE Projects based on log4j2
  - Logger.log.warn();
  - Logger.log.error();
  - Logger.log.debug();
+ - Logger.log.trace();
  
  
  Eclipse Plugins:
