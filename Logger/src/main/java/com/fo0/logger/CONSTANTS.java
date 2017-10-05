@@ -1,4 +1,4 @@
-package com.fo0.ss.logger;
+package com.fo0.logger;
 
 import java.io.File;
 import java.io.FileInputStream;

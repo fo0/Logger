@@ -1,15 +1,19 @@
-package com.fo0.ss.logger;
+package com.fo0.logger;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 
-import com.fo0.ss.logger.OSCheck.OSType;
+import com.fo0.logger.OSCheck.OSType;
 
 public class Logger extends LogManager {
 
-	public static org.apache.logging.log4j.Logger log = getLogger();
+	public static org.apache.logging.log4j.Logger log = null;
 
 	static {
+		System.setProperty("java.util.logging.manager", "org.apache.logging.log4j.jul.LogManager");
+
+		log = getLogger();
+
 		OSType os = OSCheck.getOperatingSystemType();
 		ConfigureLogger.initialize(os);
 
@@ -38,14 +42,14 @@ public class Logger extends LogManager {
 		log.info(" Logger-Path: " + CONSTANTS.path);
 		log.info(" Logger-Level: " + CONSTANTS.LOGGER_LEVEL);
 		log.info(" Detected OS: " + os);
+		log.info(" Bridges: java.util.logging, slf4j");
 		log.info(" Colorized: " + colorized);
 		log.info("Logger has been successful initialized");
 		log.info("#########################################");
-		
 		System.out.println();
 	}
-	
-	public static void setLoggerLevel(String level){
+
+	public static void setLoggerLevel(String level) {
 		ConfigureLogger.setLoggerLevel(Level.valueOf(level.toUpperCase()));
 	}
 

@@ -1,12 +1,12 @@
-package com.fo0.ss.logger;
+package com.fo0.logger;
 
 import java.util.Locale;
 
-public final class OSCheck {
+final class OSCheck {
 	/**
 	 * types of Operating Systems
 	 */
-	public enum OSType {
+	protected enum OSType {
 		Windows, MacOS, Linux, Other
 	};
 

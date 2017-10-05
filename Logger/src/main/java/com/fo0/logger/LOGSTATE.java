@@ -1,10 +1,14 @@
-package com.fo0.ss.logger;
+package com.fo0.logger;
 
 public enum LOGSTATE {
 
+	VALID,
+
 	GENERAL,
 
-	INITIALIZE,
+	INIT,
+
+	BOOTSTRAP,
 
 	PROCESSING,
 
@@ -38,13 +42,37 @@ public enum LOGSTATE {
 
 	SKIPPING,
 
+	INSTALL,
+	
 	INSTALLED,
 
 	DEINSTALL,
-	
+
 	DATABASE,
-	
-	LICENSE;
+
+	SCAN,
+
+	SUCCESS,
+
+	LICENSE,
+
+	MODULE,
+
+	CONFIG,
+
+	TODO,
+
+	CLI,
+
+	REMOVE,
+
+	TEST,
+
+	ARCHITECTURE,
+
+	NOT_SUPPORTED,
+
+	REFRESH;
 
 	@Override
 	public String toString() {

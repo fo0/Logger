@@ -1,4 +1,4 @@
-package com.fo0.ss.logger;
+package com.fo0.logger;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -9,10 +9,10 @@ import org.apache.logging.log4j.core.LoggerContext;
 import org.apache.logging.log4j.core.config.Configuration;
 import org.apache.logging.log4j.core.config.LoggerConfig;
 
-import com.fo0.ss.logger.OSCheck.OSType;
+import com.fo0.logger.OSCheck.OSType;
 
-public class ConfigureLogger {
-	
+class ConfigureLogger {
+
 	private static LoggerContext ctx = null;
 
 	public static void initialize(OSType os) {
@@ -61,30 +61,11 @@ public class ConfigureLogger {
 
 		Configuration config = ctx.getConfiguration();
 		LoggerConfig loggerConfig = config.getLoggerConfig(LogManager.ROOT_LOGGER_NAME);
-		switch (CONSTANTS.LOGGER_LEVEL.toUpperCase()) {
-		case "INFO":
-			loggerConfig.setLevel(Level.INFO);
-			break;
-		case "DEBUG":
-			loggerConfig.setLevel(Level.DEBUG);
-			break;
-		case "WARN":
-			loggerConfig.setLevel(Level.WARN);
-			break;
-		case "ALL":
-			loggerConfig.setLevel(Level.ALL);
-			break;
-		case "ERROR":
-			loggerConfig.setLevel(Level.ERROR);
-			break;
-
-		default:
-			break;
-		}
+		loggerConfig.setLevel(Level.valueOf(CONSTANTS.LOGGER_LEVEL));
 		ctx.updateLoggers();
 	}
-	
-	protected static void setLoggerLevel(Level level){
+
+	protected static void setLoggerLevel(Level level) {
 		Configuration config = ctx.getConfiguration();
 		LoggerConfig loggerConfig = config.getLoggerConfig(LogManager.ROOT_LOGGER_NAME);
 		loggerConfig.setLevel(level);
