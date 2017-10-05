@@ -11,6 +11,25 @@ Simple and ready-to-use Logger for Java-SE Projects based on log4j2
  - Logger.log.trace();
  
  
+ ## Config-File
+ The Logger creates automatically a config file .properties on Path: "config/logger.properties".
+ 
+ Example:
+```
+#This is a sample for java properties
+#Thu Mar 02 15:11:28 CET 2017
+LOGGER_ENABLE_COLOR=true
+LOGGER.LEVEL=DEBUG
+```
+
+Options are:
+- LOGGER_ENABLE_COLOR=true|false
+- LOGGER=INFO|WARN|ERROR|DEBUG|TRACE
+
+## Environment Detection
+It has a detection for current environment. 
+Compatibility table comming soon...
+ 
  Eclipse Plugins:
 ----------------
 
