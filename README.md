@@ -30,10 +30,8 @@ Options are:
 It has a detection for current environment. 
 Compatibility table comming soon...
  
- Eclipse Plugins:
-----------------
-
-**Colorized Console Output**
+# Eclipse Plugins:
+## Colorized Console Output
 
     https://marketplace.eclipse.org/content/ansi-escape-console
 
