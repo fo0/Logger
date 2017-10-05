@@ -1,1 +1,8 @@
-/target/
+target/
+
+config/
+logs/
+logs_dn/
+plugins/
+images/
+tmp/
