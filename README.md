@@ -36,7 +36,7 @@ Simple and ready-to-use Logger for Java-SE Projects based on log4j2
 	<dependency>
 		<groupId>com.fo0.logger</groupId>
 		<artifactId>Logger</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</dependency>
 	...
 	</dependencies>
